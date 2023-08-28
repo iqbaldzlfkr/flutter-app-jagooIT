@@ -69,7 +69,6 @@ class DummyColumnItem extends StatelessWidget {
             child: Container(
               margin: const EdgeInsets.only(top: 50),
               alignment: Alignment.bottomRight,
-              // color: redColor,
               child: SvgPicture.asset(
                 'assets/ic_star.svg',
               ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/models/history_model.dart';
+import 'package:flutter_app/shared/button.dart';
 import 'package:flutter_app/shared/theme.dart';
 
 class CalculatorPage extends StatefulWidget {
@@ -63,7 +64,8 @@ class _CalculatorPageState extends State<CalculatorPage> {
           lastNum2 = num2;
           notificationMessage = '';
           // historyList.add('${num1.toInt()} $opertaionSymbol ${num2.toInt()}');
-          historyList.add(HistoryModel(num1: num1, operation: opertaionSymbol, num2: num2));
+          historyList.add(
+              HistoryModel(num1: num1, operation: opertaionSymbol, num2: num2));
         });
       }
     }
@@ -340,10 +342,12 @@ class _CalculatorPageState extends State<CalculatorPage> {
                               TextButton(
                                 onPressed: () {
                                   setState(() {
-                                    controller1.text =
-                                        historyList[index].num1.toStringAsFixed(0);
-                                    controller2.text =
-                                        historyList[index].num2.toStringAsFixed(0);
+                                    controller1.text = historyList[index]
+                                        .num1
+                                        .toStringAsFixed(0);
+                                    controller2.text = historyList[index]
+                                        .num2
+                                        .toStringAsFixed(0);
                                   });
                                 },
                                 child: Text(
@@ -370,31 +374,15 @@ class _CalculatorPageState extends State<CalculatorPage> {
           ),
         ),
       ),
-      floatingActionButton: Visibility(
-        visible: opertaionSymbol.isNotEmpty,
+      bottomNavigationBar: Visibility(
         child: Container(
-          width: 330,
-          height: 56,
-          margin: const EdgeInsets.only(right: 16),
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(8.0),
-            child: Material(
-              child: InkWell(
-                onTap: calculateResult,
-                child: Container(
-                  color: blueColor.withOpacity(0.3),
-                  child: Center(
-                    child: Text(
-                      'CALCULATE',
-                      style: blueTextStyle.copyWith(
-                        fontSize: 16,
-                        fontWeight: extraBold,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ),
+          margin: const EdgeInsets.symmetric(
+            horizontal: 16,
+            vertical: 16,
+          ),
+          child: CustomFilledButton(
+            title: 'CALCULATE',
+            onPressed: calculateResult,
           ),
         ),
       ),

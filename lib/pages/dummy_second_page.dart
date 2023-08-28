@@ -73,7 +73,8 @@ class DummySecondPage extends StatelessWidget {
               child: GridView.builder(
                 itemCount: 8,
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2),
+                  crossAxisCount: 2,
+                ),
                 itemBuilder: (context, index) {
                   return Container(
                     padding: const EdgeInsets.all(8),

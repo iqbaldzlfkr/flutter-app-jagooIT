@@ -10,6 +10,7 @@ class DummyRowItem extends StatelessWidget {
     return Container(
       width: 110,
       padding: const EdgeInsets.all(8),
+      margin: const EdgeInsets.symmetric(horizontal: 8),
       decoration: BoxDecoration(
         border: Border.all(
           width: 1,
