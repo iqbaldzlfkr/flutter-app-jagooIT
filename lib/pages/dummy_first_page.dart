@@ -150,9 +150,9 @@ class DummyFirstPage extends StatelessWidget {
               const SizedBox(
                 height: 16,
               ),
-              CustomFilledButton(
+              CustomButton(
                 title: 'Press Me',
-                onPressed: () {},
+                onTap: () {},
               ),
               const SizedBox(
                 height: 12,

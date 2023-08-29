@@ -255,7 +255,7 @@ class _CalculatorPageState extends State<CalculatorPage> {
                     ),
                     SizedBox(
                       child: Text(
-                        result,
+                        result.isNotEmpty ? result : '...',
                         textAlign: TextAlign.center,
                         style: blackTextStyle.copyWith(
                           fontSize: 32,
@@ -375,14 +375,15 @@ class _CalculatorPageState extends State<CalculatorPage> {
         ),
       ),
       bottomNavigationBar: Visibility(
+        visible: opertaionSymbol.isNotEmpty,
         child: Container(
           margin: const EdgeInsets.symmetric(
             horizontal: 16,
             vertical: 16,
           ),
-          child: CustomFilledButton(
+          child: CustomButton(
             title: 'CALCULATE',
-            onPressed: calculateResult,
+            onTap: calculateResult,
           ),
         ),
       ),

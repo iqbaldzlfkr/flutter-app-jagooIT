@@ -163,9 +163,9 @@ class _InputValidationPageState extends State<InputValidationPage> {
                           ),
                           TextFormField(
                             controller: ctrlEmail,
-                            inputFormatters: [
-                              FilteringTextInputFormatter.deny(RegExp('[]')),
-                            ],
+                            // inputFormatters: [
+                            //   FilteringTextInputFormatter.deny(RegExp('[]')),
+                            // ],
                             validator: (email) {
                               if (email == null || email.isEmpty) {
                                 return 'Email cannot be empty';
@@ -198,7 +198,7 @@ class _InputValidationPageState extends State<InputValidationPage> {
                 horizontal: 16,
                 vertical: 16,
               ),
-              child: CustomInputValidationButton(
+              child: CustomButton(
                 title: 'Submit',
                 onTap: () {
                   if (_formKey.currentState!.validate()) {
